@@ -87,7 +87,7 @@ let answers = [
 	1, // Adding interactivity to websites
 	3, // All of the above
 	1, // //
-	0, // The data type of a variable
+	0, // The data type of variable
 	0, // push()
 	3, // Object
 	1, // if (i == 5)
@@ -184,21 +184,19 @@ function saveAnswers() {
 // Function to clear previous answers
 
 function clearSelection() {
-	if (!boxAnswers || boxAnswers.length == 0) return;
+				if (!boxAnswers || boxAnswers.length === 0) return;
 
-	boxAnswers.forEach((box) => {
-		if (box.length == 0) {
-			box.checked = false;
-		}
-	});
-}
+				boxAnswers.forEach((box) => {
+					box.checked = false;
+				});
+			}
 
 // Button Previous Functionality
 
 let btnPre = document.getElementById("back");
 
 btnPre.addEventListener("click", function () {
-	if (qIndex == 0) {
+	if (qIndex === 0) {
 		btnPre.disabled = true;
 	} else {
 		qIndex--;
@@ -224,10 +222,3 @@ function noAnswer() {}
 function noAnswerAlert() {
 	redAlertBox.classList.add("show");
 }
-
-// Alert Button close EventListener
-
-redAlertClose.addEventListener("click", function () {
-	// redAlertBox.classList.add("fade");
-	redAlertBox.classList.remove("show");
-});
