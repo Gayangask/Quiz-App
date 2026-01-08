@@ -138,7 +138,7 @@ btnNext.addEventListener("click", function () {
 
 
 
-	// Getting the last element of the array and set check wether the quiz was finished
+	// Getting the last element of the array and set check weather the quiz was finished
 	if (qIndex < questions.length - 1) {
 		saveAnswers();
 		clearSelection();
