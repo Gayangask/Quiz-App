@@ -213,7 +213,7 @@ btnPre.addEventListener("click", function () {
 
 // Alert system (functions)
 
-// When user selecetd no answer
+// When user selected no answer
 let redAlertClose = document.querySelector(".btnRed");
 let redAlertBox = document.querySelector(".red");
 
