@@ -136,11 +136,7 @@ btnNext.addEventListener("click", function () {
 	// 	return;
 	// }
 
-	// // Validate Current Question
-	// if (userAnswers[opIndex] == undefined) {
-	// 	noAnswerAlert();
-	// 	return;
-	// }
+
 
 	// Getting the last element of the array and set check wether the quiz was finished
 	if (qIndex < questions.length - 1) {
@@ -172,6 +168,11 @@ function saveAnswers() {
 		if (input.checked) {
 			selectedAnswer = i;
 		}
+        // Validate Current Question
+        if (userAnswers[opIndex] === undefined) {
+            noAnswerAlert();
+
+        }
 	});
 
 	userAnswers[opIndex] = selectedAnswer;
