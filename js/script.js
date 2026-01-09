@@ -92,7 +92,7 @@ loadAnswers();
 
 // Save answer
 function saveAnswers() {
-    // selectedAnswer = undefined;
+    selectedAnswer = undefined;
 
     boxAnswers.forEach((input, i) => {
         if (input.checked) {
@@ -101,7 +101,10 @@ function saveAnswers() {
     });
 
     userAnswers[qIndex] = selectedAnswer;
+    console.log(userAnswers);
 }
+
+console.log(userAnswers);
 
 // Restore previous answer
 function preAnswers() {
@@ -111,7 +114,7 @@ function preAnswers() {
     }
 }
 
-// Clear selection (FIXED)
+// Clear selection
 function clearSelection() {
     boxAnswers.forEach((box) => {
         box.checked = false;
@@ -145,8 +148,16 @@ let btnPre = document.getElementById("back");
 
 btnNext.addEventListener("click", () => {
 
-    // VALIDATE FIRST (FIXED)
-    if (userAnswers[qIndex] === undefined) {
+    let hasSelection = false;
+
+    boxAnswers.forEach((input) => {
+        if (input.checked) {
+            hasSelection = true;
+        }
+    });
+
+    // VALIDATE CURRENT SELECTION (FIXED)
+    if (!hasSelection) {
         noAnswerAlert();
         return;
     }
@@ -161,8 +172,22 @@ btnNext.addEventListener("click", () => {
 
         loadAnswers();
         preAnswers();
+
+        // // Logging final score
+        // const finalScore = calScore();
+        // console.log("Final Score:", finalScore);
+
     } else {
+        saveAnswers();
         btnNext.textContent = "Quiz Finished";
+
+        // Logging final score
+        const finalScore = calScore();
+        console.log("Final Score:", finalScore);
+
+        //Show Final Score in the Marks page
+        const marks = document.getElementById("marks");
+        marks.textContent = finalScore.toString();
     }
 });
 
@@ -179,4 +204,15 @@ btnPre.addEventListener("click", () => {
     loadAnswers();
     preAnswers();
 });
-console.log(userAnswers);
+
+//Function to calculate score
+
+function calScore() {
+    let score = 0;
+    for (let i = 0; i < answers.length; i++) {
+        if (userAnswers[i] === answers[i]) {
+            score += 5;
+        }
+    }
+    return score;
+}
