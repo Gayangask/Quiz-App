@@ -145,6 +145,7 @@ boxAnswers.forEach((input) => {
 let btnNext = document.getElementById("next");
 let btnPre = document.getElementById("back");
 
+// Button Next
 btnNext.addEventListener("click", () => {
 
     let hasSelected = false;
