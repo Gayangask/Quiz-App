@@ -161,8 +161,8 @@ btnNext.addEventListener("click", () => {
         noAnswerAlert();
 
     }
-    // // Allowing access to all questions
-    // hasSelected = false;
+    // Allowing access to all questions
+    hasSelected = false;
 
 
     if (qIndex < questions.length - 1) {
@@ -183,7 +183,7 @@ btnNext.addEventListener("click", () => {
     } else {
         saveAnswers();
         btnNext.textContent = "Quiz Finished";
-
+        window.location.href = "marks.html";
         // Logging final score
         const finalScore = calScore();
         console.log("Final Score:", finalScore);
