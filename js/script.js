@@ -1,5 +1,4 @@
 // Buttons exists in only on some pages
-
 document.addEventListener("DOMContentLoaded", () => {
     const btnStart = document.getElementById("btnStart");
     if (btnStart) {
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Questions array
-
 let questions = [
     "What is JavaScript mainly used for?",
     "Which keyword is used to declare a variable in JavaScript?",
@@ -42,22 +40,11 @@ let questions = [
 ];
 
 // options array
-
 let options = [
-    [
-        "Styling web pages",
-        "Adding interactivity to websites",
-        "Creating databases",
-        "Designing logos",
-    ],
+    ["Styling web pages", "Adding interactivity to websites", "Creating databases", "Designing logos"],
     ["var", "let", "const", "All of the above"],
     ["<!-- -->", "//", "/* */", "#"],
-    [
-        "The data type of a variable",
-        "The value of a variable",
-        "The length of a variable",
-        "The index of a variable",
-    ],
+    ["The data type of a variable", "The value of a variable", "The length of a variable", "The index of a variable"],
     ["push()", "pop()", "shift()", "unshift()"],
     ["String", "Number", "Boolean", "Object"],
     ["if i == 5", "if (i == 5)", "if i = 5", "if (i = 5)"],
@@ -69,170 +56,127 @@ let options = [
     ["print()", "console.log()", "alert()", "document.write()"],
     ["function", "def", "method", "func"],
     ["<js>", "<script>", "<javascript>", "<code>"],
-    [
-        "Document Object Model",
-        "Data Object Method",
-        "Digital Ordinance Model",
-        "Document Order Method",
-    ],
+    ["Document Object Model", "Data Object Method", "Digital Ordinance Model", "Document Order Method"],
     ["for loop", "while loop", "do...while loop", "switch statement"],
     ["{}", "()", "[]", "<>"],
     ["parseInt()", "parseFloat()", "Number()", "String()"],
     ["break", "stop", "exit", "return"],
 ];
 
-// Answers array
-
+// Correct answers
 let answers = [
-    1, // Adding interactivity to websites
-    3, // All of the above
-    1, // //
-    0, // The data type of variable
-    0, // push()
-    3, // Object
-    1, // if (i == 5)
-    2, // ===
-    1, // object
-    2, // onclick
-    1, // pop()
-    0, // array[0]
-    1, // console.log()
-    0, // function
-    1, // <script>
-    0, // Document Object Model
-    0, // for loop
-    2, // []
-    0, // parseInt()
-    0, // break
+    1, 3, 1, 0, 0, 3, 1, 2, 1, 2,
+    1, 0, 1, 0, 1, 0, 0, 2, 0, 0,
 ];
 
 let question = document.getElementById("question");
 let answersPara = document.querySelectorAll(".answersPara");
+let boxAnswers = document.querySelectorAll("input[name='ans']");
+
 let qIndex = 0;
-let opIndex = 0;
-let labels = ["A", "B", "C", "D"];
 let qNum = 1;
+let labels = ["A", "B", "C", "D"];
 
+let userAnswers = [];
+let selectedAnswer;
+
+// Load question
 function loadAnswers() {
-    console.log(question);
-
     question.textContent = qNum + ". " + questions[qIndex];
-
-    answersPara.forEach((answersPara, i) => {
-        answersPara.innerText = labels[i] + ". " + options[qIndex][i];
+    answersPara.forEach((para, i) => {
+        para.textContent = labels[i] + ". " + options[qIndex][i];
     });
 }
 
 loadAnswers();
 
-// question.textContent = qNum + ". " + questions[0];
-// answer.textContent = options[0];
+// Save answer
+function saveAnswers() {
+    // selectedAnswer = undefined;
 
-let btnNext = document.getElementById("next");
-
-btnNext.addEventListener("click", function () {
-    // // Validate current question
-    // if (userAnswers[qIndex] === undefined) {
-    // 	noAnswerAlert();
-    // 	return;
-    // }
-
-
-    // Getting the last element of the array and set check weather the quiz was finished
-    if (qIndex < questions.length - 1) {
-        if (userAnswers[opIndex] === undefined) {
-            noAnswerAlert();
-
+    boxAnswers.forEach((input, i) => {
+        if (input.checked) {
+            selectedAnswer = i;
         }
+    });
 
+    userAnswers[qIndex] = selectedAnswer;
+}
+
+// Restore previous answer
+function preAnswers() {
+    clearSelection();
+    if (userAnswers[qIndex] !== undefined) {
+        boxAnswers[userAnswers[qIndex]].checked = true;
+    }
+}
+
+// Clear selection (FIXED)
+function clearSelection() {
+    boxAnswers.forEach((box) => {
+        box.checked = false;
+    });
+}
+
+// Alert system
+let redAlertClose = document.querySelector(".btnRed");
+let redAlertBox = document.querySelector(".red");
+
+function noAnswerAlert() {
+    if (!redAlertBox.classList.contains("show")) {
+        redAlertBox.classList.add("show");
+    }
+}
+
+redAlertClose.addEventListener("click", () => {
+    redAlertBox.classList.remove("show");
+});
+
+// Hide alert when selecting an option
+boxAnswers.forEach((input) => {
+    input.addEventListener("change", () => {
+        redAlertBox.classList.remove("show");
+    });
+});
+
+// Next button
+let btnNext = document.getElementById("next");
+let btnPre = document.getElementById("back");
+
+btnNext.addEventListener("click", () => {
+
+    // VALIDATE FIRST (FIXED)
+    if (userAnswers[qIndex] === undefined) {
+        noAnswerAlert();
+        return;
+    }
+
+    if (qIndex < questions.length - 1) {
         saveAnswers();
         clearSelection();
 
-        // Validate Current Question
         btnPre.disabled = false;
         qIndex++;
         qNum++;
-        opIndex++;
 
-        question.textContent = qNum + ". " + questions[qIndex];
-
-        answersPara.forEach((answersPara, i) => {
-            answersPara.textContent = labels[i] + ". " + options[qIndex][i];
-
-        });
+        loadAnswers();
+        preAnswers();
     } else {
         btnNext.textContent = "Quiz Finished";
     }
 });
 
-// function to save answers
-let boxAnswers = document.querySelectorAll("input[name='ans']");
-let userAnswers = [];
-let selectedAnswer = -1;
-
-function saveAnswers() {
-    boxAnswers.forEach((input, i) => {
-        if (input.checked) {
-            selectedAnswer = i;
-        }
-
-    });
-
-    userAnswers[opIndex] = selectedAnswer;
-    console.log(userAnswers);
-
-    if (selectedAnswer[opIndex] !== undefined) {
-        boxAnswers[selectedAnswer[opIndex]].checked = false;
-    }
-}
-
-// Function to clear previous answers
-
-function clearSelection() {
-    if (!boxAnswers || boxAnswers.length === 0) return;
-
-    boxAnswers.forEach((box) => {
-        box.checked = false;
-    });
-
-
-}
-
-// Button Previous Functionality
-
-let btnPre = document.getElementById("back");
-
-btnPre.addEventListener("click", function () {
+// Previous button
+btnPre.addEventListener("click", () => {
     if (qIndex === 0) {
         btnPre.disabled = true;
-    } else {
-        qIndex--;
-        qNum--;
-        opIndex--;
-        question.textContent = qNum + ". " + questions[qIndex];
-
-        answersPara.forEach((answersPara, i) => {
-            answersPara.textContent = labels[i] + ". " + options[qIndex][i];
-        });
+        return;
     }
+
+    qIndex--;
+    qNum--;
+
+    loadAnswers();
+    preAnswers();
 });
-
-// Alert system (functions)
-
-// When user selected no answer
-let redAlertClose = document.querySelector(".btnRed");
-let redAlertBox = document.querySelector(".red");
-
-// Function  to call when no answer is selected
-function noAnswer() {
-}
-
-function noAnswerAlert() {
-    redAlertBox.classList.add("show");
-}
-
-redAlertClose.addEventListener("click", function () {
-    redAlertBox.classList.add("fade");
-    redAlertBox.classList.remove("show");
-
-})
+console.log(userAnswers);
