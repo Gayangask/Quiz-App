@@ -104,7 +104,6 @@ function saveAnswers() {
     console.log(userAnswers);
 }
 
-console.log(userAnswers);
 
 // Restore previous answer
 function preAnswers() {
@@ -148,19 +147,22 @@ let btnPre = document.getElementById("back");
 
 btnNext.addEventListener("click", () => {
 
-    let hasSelection = false;
+    let hasSelected = false;
 
     boxAnswers.forEach((input) => {
         if (input.checked) {
-            hasSelection = true;
+            hasSelected = true;
         }
     });
 
-    // VALIDATE CURRENT SELECTION (FIXED)
-    if (!hasSelection) {
+    // VALIDATE CURRENT SELECTION
+    if (!hasSelected) {
         noAnswerAlert();
-        return;
+
     }
+    // // Allowing access to all questions
+    // hasSelected = false;
+
 
     if (qIndex < questions.length - 1) {
         saveAnswers();
@@ -188,6 +190,7 @@ btnNext.addEventListener("click", () => {
         //Show Final Score in the Marks page
         const marks = document.getElementById("marks");
         marks.textContent = finalScore.toString();
+
     }
 });
 
