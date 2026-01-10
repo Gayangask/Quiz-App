@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbfc4628-b03a-4945-8d08-5c378d7087ee" name="Changes" comment="commited">
+    <list default="true" id="fbfc4628-b03a-4945-8d08-5c378d7087ee" name="Changes" comment="Changes Commited">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marks.html" beforeDir="false" afterPath="$PROJECT_DIR$/marks.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,24 +17,37 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Gayangask"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Gayangask&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Gayangask/Quiz-App.git&quot;,
     &quot;accountId&quot;: &quot;a9efae31-05b0-4afb-a9aa-463e857b6a5c&quot;
   }
 }</component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="37zqT116yOF6mgnwLK7gbw9AsAz" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -45,14 +59,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.script.js.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Language Defaults",
+    "nodejs_package_manager_path": "npm",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -87,9 +106,91 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1767916254475</updated>
-      <workItem from="1767916255705" duration="256000" />
+      <workItem from="1767916255705" duration="13793000" />
+      <workItem from="1768001322770" duration="1888000" />
+      <workItem from="1768003242554" duration="1848000" />
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1767916543740</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767916543740</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1767949072064</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1767949072064</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1767949169812</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1767949169812</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1767954401758</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1767954401758</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1767967660838</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1767967660838</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1767967668745</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1767967668745</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1767973348934</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1767973348934</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1768001495838</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1768001495838</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1768002614399</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1768002614399</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changes Commited">
+      <option name="closed" value="true" />
+      <created>1768002636127</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1768002636127</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +198,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commited" />
-    <option name="LAST_COMMIT_MESSAGE" value="commited" />
+    <MESSAGE value="Changes Commited" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes Commited" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

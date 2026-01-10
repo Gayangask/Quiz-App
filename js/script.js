@@ -161,8 +161,10 @@ btnNext.addEventListener("click", () => {
         noAnswerAlert();
 
     }
-    // Allowing access to all questions
-    hasSelected = false;
+
+    saveAnswers();
+    // // Allowing access to all questions
+    // hasSelected = false;
 
 
     if (qIndex < questions.length - 1) {
@@ -182,15 +184,19 @@ btnNext.addEventListener("click", () => {
 
     } else {
         saveAnswers();
-        btnNext.textContent = "Quiz Finished";
-        window.location.href = "marks.html";
         // Logging final score
         const finalScore = calScore();
         console.log("Final Score:", finalScore);
 
+        // Adding to local storage
+        localStorage.setItem("finalScore", finalScore.toString());
+
+        btnNext.textContent = "Quiz Finished";
+        window.location.href = "marks.html";
         //Show Final Score in the Marks page
         const marks = document.getElementById("marks");
-        marks.textContent = finalScore.toString();
+        marks.innerText = finalScore.toString();
+
 
     }
 });
